@@ -706,6 +706,33 @@ function formatTimeLabel(years) {
     return `לפני ${(years / 1000000000).toFixed(1)} מיליארד שנה`;
 }
 
+// חישוב מיקום על ציר הזמן
+function calculateTimelinePosition(yearsAgo, minYears, maxYears) {
+    // בדיקה אם זה תקופה מודרנית (פחות מ-1000 שנה)
+    if (maxYears <= 1000) {
+        // סקלה לינארית לתקופה המודרנית
+        return 100 - ((yearsAgo - minYears) / (maxYears - minYears)) * 100;
+    }
+    
+    // בדיקה אם זה תקופה אנושית (פחות מ-10 מיליון שנה)
+    if (maxYears <= 10000000) {
+        // סקלה חצי-לוגריתמית
+        const logMin = Math.log10(Math.max(1, minYears));
+        const logMax = Math.log10(Math.max(1, maxYears));
+        const logValue = Math.log10(Math.max(1, yearsAgo));
+        return 100 - ((logValue - logMin) / (logMax - logMin)) * 100;
+    }
+    
+    // לתקופות ארוכות יותר - סקלה לוגריתמית מתוקננת
+    const logMin = Math.log10(Math.max(1, minYears));
+    const logMax = Math.log10(Math.max(1, maxYears));
+    const logValue = Math.log10(Math.max(1, yearsAgo));
+    
+    // היפוך הכיוון (העבר בימין, העתיד בשמאל) והוספת מרווח
+    const position = 95 - ((logValue - logMin) / (logMax - logMin)) * 90;
+    return Math.max(5, Math.min(95, position));
+}
+
 // סינון נתונים
 function getFilteredData() {
     let data = [...universeData];
