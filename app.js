@@ -570,17 +570,25 @@ function initializeTimeline() {
 // רינדור ציר הזמן
 function renderTimeline() {
     const container = document.getElementById('timelineEvents');
+    const axisContainer = document.getElementById('timelineAxis');
     if (!container) return;
     
     container.innerHTML = '';
+    if (axisContainer) axisContainer.innerHTML = '';
     
     let filteredData = getFilteredData();
     
-    if (filteredData.length === 0) return;
+    if (filteredData.length === 0) {
+        container.innerHTML = '<div class="no-events">אין אירועים להצגה</div>';
+        return;
+    }
     
     // חישוב טווח זמנים
     const minYears = Math.min(...filteredData.map(d => d.yearsAgo));
     const maxYears = Math.max(...filteredData.map(d => d.yearsAgo));
+    
+    // הוספת תוויות זמן לציר
+    addTimeLabels(axisContainer, minYears, maxYears);
     
     // יצירת נקודות על ציר הזמן
     filteredData.forEach((event, index) => {
@@ -590,13 +598,49 @@ function renderTimeline() {
         const position = calculateTimelinePosition(event.yearsAgo, minYears, maxYears);
         
         eventElement.style.left = position + '%';
-        eventElement.style.top = (50 + (index % 5) * 50) + 'px';
+        eventElement.style.top = (20 + (index % 4) * 80) + 'px';
         
-        // תווית
+        // יצירת הנקודה
+        const dot = document.createElement('div');
+        dot.className = 'event-dot';
+        eventElement.appendChild(dot);
+        
+        // תווית עם כותרת ותאריך
         const label = document.createElement('div');
         label.className = 'event-label';
-        label.textContent = event.title;
+        
+        const title = document.createElement('div');
+        title.className = 'event-title';
+        title.textContent = event.title;
+        
+        const date = document.createElement('div');
+        date.className = 'event-date';
+        date.textContent = event.date;
+        
+        label.appendChild(title);
+        label.appendChild(date);
         eventElement.appendChild(label);
+        
+        // הוספת tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'event-tooltip';
+        tooltip.innerHTML = `
+            <strong>${event.title}</strong><br>
+            <em>${event.date}</em><br>
+            ${event.description.substring(0, 100)}...
+        `;
+        eventElement.appendChild(tooltip);
+        
+        // אירועי עכבר
+        eventElement.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+        });
+        
+        eventElement.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            tooltip.style.visibility = 'hidden';
+        });
         
         // אירוע קליק
         eventElement.addEventListener('click', () => {
@@ -607,14 +651,59 @@ function renderTimeline() {
     });
 }
 
-function calculateTimelinePosition(yearsAgo, minYears, maxYears) {
-    // שימוש בסקלה לוגריתמית
-    const logMin = Math.log10(Math.max(1, minYears));
-    const logMax = Math.log10(Math.max(1, maxYears));
-    const logValue = Math.log10(Math.max(1, yearsAgo));
+// הוספת תוויות זמן לציר
+function addTimeLabels(axisContainer, minYears, maxYears) {
+    if (!axisContainer) return;
     
-    // היפוך הכיוון (העבר בימין, העתיד בשמאל)
-    return 100 - ((logValue - logMin) / (logMax - logMin)) * 100;
+    // יצירת תוויות לפי טווח הזמן
+    let labels = [];
+    
+    if (maxYears <= 1000) {
+        // תקופה מודרנית
+        for (let i = 0; i <= 10; i++) {
+            const years = minYears + (maxYears - minYears) * (i / 10);
+            labels.push({
+                position: i * 10,
+                text: years < 1 ? 'היום' : `לפני ${Math.round(years)} שנה`
+            });
+        }
+    } else if (maxYears <= 10000000) {
+        // תקופה אנושית
+        const milestones = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
+        labels = milestones
+            .filter(m => m >= minYears && m <= maxYears)
+            .map(years => ({
+                position: calculateTimelinePosition(years, minYears, maxYears),
+                text: formatTimeLabel(years)
+            }));
+    } else {
+        // תקופה גיאולוגית/קוסמית
+        const milestones = [1, 1000, 1000000, 100000000, 1000000000, 4600000000, 13700000000];
+        labels = milestones
+            .filter(m => m >= minYears && m <= maxYears)
+            .map(years => ({
+                position: calculateTimelinePosition(years, minYears, maxYears),
+                text: formatTimeLabel(years)
+            }));
+    }
+    
+    // יצירת תוויות
+    labels.forEach(label => {
+        const labelElement = document.createElement('div');
+        labelElement.className = 'time-label';
+        labelElement.style.left = label.position + '%';
+        labelElement.textContent = label.text;
+        axisContainer.appendChild(labelElement);
+    });
+}
+
+// פורמט תווית זמן
+function formatTimeLabel(years) {
+    if (years < 1) return 'היום';
+    if (years < 1000) return `לפני ${years} שנה`;
+    if (years < 1000000) return `לפני ${Math.round(years / 1000)} אלף שנה`;
+    if (years < 1000000000) return `לפני ${Math.round(years / 1000000)} מיליון שנה`;
+    return `לפני ${(years / 1000000000).toFixed(1)} מיליארד שנה`;
 }
 
 // סינון נתונים
