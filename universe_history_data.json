@@ -1,0 +1,492 @@
+[
+  {
+    "id": 0,
+    "title": "המפץ הגדול",
+    "category": "יקום",
+    "years_ago": 13800000000.0,
+    "description": "התחלתו של היקום, המרחב והזמן",
+    "perspective": "cosmic",
+    "full_details": "המפץ הגדול הוא המודל הקוסמולוגי המקובל על רוב המדענים לתיאור התחלת היקום לפני כ-13.8 מיליארד שנה. ביותר מהוא אינו 'פיצוץ' במובן הרגיל, אלא התפשטות מהירה של המרחב-זמן עצמו.",
+    "interesting_facts": [
+      "לפי התיאוריה, כל החומר והאנרגיה ביקום היו מרוכזים בנקודה אחת צפופה וחמה אינסופית",
+      "המפץ הגדול לא התרחש במקום מסוים בחלל, אלא היה תחילתו של החלל עצמו",
+      "קרינת רקע קוסמית שהתגלתה ב-1965 מספקת ראיה חזקה לתמיכה בתיאוריית המפץ הגדול"
+    ],
+    "related_events": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 1,
+    "title": "היווצרות האטומים הראשונים",
+    "category": "יקום",
+    "years_ago": 13799620000.0,
+    "description": "רקומבינציה - יצירת אטומי מימן ראשונים",
+    "perspective": "cosmic",
+    "full_details": "כ-380,000 שנה לאחר המפץ הגדול, היקום התקרר מספיק כדי לאפשר לפרוטונים ואלקטרונים להתאחד וליצור אטומים יציבים. זה מכונה 'עידן הרקומבינציה'.",
+    "interesting_facts": [
+      "לפני רקומבינציה, היקום היה אטום לאור בגלל פיזור פוטונים על ידי אלקטרונים חופשיים",
+      "היצירה של אטומי מימן ניטרליים אפשרה לפוטונים לנוע בחופשיות, מה שיצר את קרינת הרקע הקוסמית",
+      "זה היה המעבר הראשון המשמעותי של היקום, מפלזמה חמה מאוד לגז של אטומים"
+    ],
+    "related_events": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 2,
+    "title": "היווצרות כוכבים ראשונים",
+    "category": "יקום",
+    "years_ago": 13400000000.0,
+    "description": "דור הכוכבים הראשון ביקום",
+    "perspective": "cosmic",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 3,
+    "title": "יצירת יסודות כבדים",
+    "category": "יקום",
+    "years_ago": 12000000000.0,
+    "description": "פיצוצי סופרנובה יוצרים יסודות כבדים",
+    "perspective": "cosmic",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 4,
+    "title": "היווצרות השמש",
+    "category": "מערכת השמש",
+    "years_ago": 4600000000.0,
+    "description": "לידת השמש ממערבולת גז וחלקיקים",
+    "perspective": "solar_system",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 5,
+    "title": "היווצרות כדור הארץ",
+    "category": "מערכת השמש",
+    "years_ago": 4500000000.0,
+    "description": "התגבשות כדור הארץ והירח",
+    "perspective": "solar_system",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 6,
+    "title": "החיים הראשונים",
+    "category": "חיים",
+    "years_ago": 3800000000.0,
+    "description": "חיידקים ראשונים בימים",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 7,
+    "title": "פוטוסינתזה",
+    "category": "חיים",
+    "years_ago": 2500000000.0,
+    "description": "התפתחות פוטוסינתזה והופעת חמצן",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 8,
+    "title": "הפיצוץ הקמבריוני",
+    "category": "חיים",
+    "years_ago": 550000000.0,
+    "description": "התפרצות מגוון צורות חיים מורכבות",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 9,
+    "title": "יציאה ליבשה",
+    "category": "חיים",
+    "years_ago": 400000000.0,
+    "description": "צמחים ובעלי חיים יוצאים ליבשה",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 10,
+    "title": "עידן הדינוזאורים",
+    "category": "חיים",
+    "years_ago": 250000000.0,
+    "description": "התחלת שלטון הדינוזאורים",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 11,
+    "title": "הכחדת הדינוזאורים",
+    "category": "חיים",
+    "years_ago": 65000000.0,
+    "description": "אסטרואיד מכחיד דינוזאורים",
+    "perspective": "biological",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 12,
+    "title": "הליכה על שתיים",
+    "category": "אדם",
+    "years_ago": 7000000.0,
+    "description": "אבות האדם מתחילים ללכת זקוף",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 13,
+    "title": "תקופת האבן",
+    "category": "אדם",
+    "years_ago": 2600000.0,
+    "description": "ייצור כלים ראשונים",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 14,
+    "title": "שליטה באש",
+    "category": "אדם",
+    "years_ago": 800000.0,
+    "description": "האדם לומד לשלוט באש",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 15,
+    "title": "הומו סאפיינס",
+    "category": "אדם",
+    "years_ago": 300000.0,
+    "description": "הופעת האדם המודרני",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 16,
+    "title": "יציאה מאפריקה",
+    "category": "אדם",
+    "years_ago": 100000.0,
+    "description": "נדידת האדם אל מחוץ לאפריקה",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 17,
+    "title": "אמנות המערות",
+    "category": "אדם",
+    "years_ago": 20000.0,
+    "description": "הופעת אמנות וחשיבה סמלית",
+    "perspective": "human",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 18,
+    "title": "המהפכה החקלאית",
+    "category": "ציוויליזציה",
+    "years_ago": 12000.0,
+    "description": "מעבר ליישובי קבע",
+    "perspective": "civilization",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 19,
+    "title": "המצאת הכתב",
+    "category": "ציוויליזציה",
+    "years_ago": 5500.0,
+    "description": "תחילת ההיסטוריה המתועדת",
+    "perspective": "civilization",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 20,
+    "title": "תקופת הברזל",
+    "category": "ציוויליזציה",
+    "years_ago": 3200.0,
+    "description": "שימוש בברזל מחולל מהפכה",
+    "perspective": "civilization",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 21,
+    "title": "חוקי ניוטון",
+    "category": "מדע",
+    "years_ago": 338.0,
+    "description": "1687 - חוקי התנועה והכבידה",
+    "perspective": "modern",
+    "full_details": "ב-1687 פרסם אייזק ניוטון את 'פרינקיפיה' שהציג את חוקי התנועה והכבידה האוניברסלית. חוקים אלה הפכו לבסיס המכניקה הקלאסית למשך יותר מ-200 שנה.",
+    "interesting_facts": [
+      "ניוטון פיתח את חשבון האינפיניטסימלי כדי לפתור בעיות מכניות",
+      "השראתו לתיאוריית הכבידה באה, לפי האגדה, מצפייה בתפוח נופל",
+      "חוקי התנועה של ניוטון הם עדיין הבסיס להנדסה מכנית ולניווט בחלל"
+    ],
+    "related_events": [
+      21,
+      22,
+      23
+    ]
+  },
+  {
+    "id": 22,
+    "title": "המהפכה התעשייתית",
+    "category": "טכנולוגיה",
+    "years_ago": 265.0,
+    "description": "1760 - תחילת המהפכה התעשייתית",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 23,
+    "title": "מוצא המינים",
+    "category": "מדע",
+    "years_ago": 166.0,
+    "description": "1859 - דרווין מפרסם תורת האבולוציה",
+    "perspective": "modern",
+    "full_details": "ב-1859, צ'ארלס דרווין פרסם את ספרו 'מוצא המינים', המציג את תיאוריית האבולוציה באמצעות ברירה טבעית. הספר שינה לחלוטין את הבנתנו על מקור ומגוון החיים.",
+    "interesting_facts": [
+      "דרווין דחה את פרסום התיאוריה שלו למשך כמעט 20 שנה מחשש לתגובות הציבור",
+      "המסע שלו בספינה 'ביגל' היה מכריע באיסוף העדויות לתיאוריה",
+      "במקביל לדרווין, אלפרד ראסל וואלס הגיע למסקנות דומות באופן עצמאי"
+    ],
+    "related_events": [
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  {
+    "id": 24,
+    "title": "חוקי התורשה",
+    "category": "מדע",
+    "years_ago": 160.0,
+    "description": "1865 - מנדל מגלה יסודות הגנטיקה",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 25,
+    "title": "הטבלה המחזורית",
+    "category": "מדע",
+    "years_ago": 156.0,
+    "description": "1869 - מנדלייב מסדר הטבלה המחזורית",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 26,
+    "title": "תורת היחסות",
+    "category": "מדע",
+    "years_ago": 110.0,
+    "description": "1905-1915 - איינשטיין מפתח יחסות",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 27,
+    "title": "מלחמת העולם הראשונה",
+    "category": "היסטוריה",
+    "years_ago": 107.0,
+    "description": "1914-1918 - המלחמה הגדולה",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 28,
+    "title": "גילוי הפניצילין",
+    "category": "רפואה",
+    "years_ago": 97.0,
+    "description": "1928 - פלמינג מתחיל עידן אנטיביוטיקה",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 29,
+    "title": "מלחמת העולם השנייה",
+    "category": "היסטוריה",
+    "years_ago": 80.0,
+    "description": "1939-1945 - המלחמה הכוללת",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 30,
+    "title": "הפצצה האטומית",
+    "category": "טכנולוגיה",
+    "years_ago": 80.0,
+    "description": "1945 - עידן האטום",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 31,
+    "title": "הקמת ישראל",
+    "category": "היסטוריה",
+    "years_ago": 77.0,
+    "description": "1948 - הקמת מדינת ישראל",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 32,
+    "title": "מבנה ה-DNA",
+    "category": "מדע",
+    "years_ago": 72.0,
+    "description": "1953 - גילוי הסליל הכפול",
+    "perspective": "modern",
+    "full_details": "ב-1953, ג'יימס ווטסון ופרנסיס קריק פרסמו את מבנה הסליל הכפול של ה-DNA. תגלית זו פתחה את הדרך להבנה כיצד מידע גנטי מאוחסן ומועתק.",
+    "interesting_facts": [
+      "התגלית התבססה חלקית על עבודתה של רוזלינד פרנקלין, שלא זכתה להכרה מספקת בזמנה",
+      "מודל הסליל הכפול הסביר כיצד מידע גנטי יכול להיות מועתק בדיוק",
+      "ווטסון וקריק פרסמו מאמר קצר של עמוד אחד בלבד בכתב העת Nature שהפך להיסטורי"
+    ],
+    "related_events": [
+      21,
+      22,
+      23,
+      32
+    ]
+  },
+  {
+    "id": 33,
+    "title": "ספוטניק 1",
+    "category": "חלל",
+    "years_ago": 68.0,
+    "description": "1957 - תחילת עידן החלל",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 34,
+    "title": "נחיתה על הירח",
+    "category": "חלל",
+    "years_ago": 56.0,
+    "description": "1969 - אפולו 11",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 35,
+    "title": "נפילת חומת ברלין",
+    "category": "היסטוריה",
+    "years_ago": 36.0,
+    "description": "1989 - סיום המלחמה הקרה",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 36,
+    "title": "האינטרנט",
+    "category": "טכנולוגיה",
+    "years_ago": 30.0,
+    "description": "שנות ה-90 - האינטרנט לציבור",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 37,
+    "title": "מיפוי הגנום",
+    "category": "מדע",
+    "years_ago": 22.0,
+    "description": "2003 - השלמת מיפוי הגנום",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 38,
+    "title": "חיסוני mRNA",
+    "category": "רפואה",
+    "years_ago": 5.0,
+    "description": "2020 - חיסוני קורונה",
+    "perspective": "modern",
+    "full_details": "",
+    "interesting_facts": [],
+    "related_events": []
+  },
+  {
+    "id": 39,
+    "title": "מהפכת הבינה המלאכותית",
+    "category": "טכנולוגיה",
+    "years_ago": 3.0,
+    "description": "2022 - ChatGPT ומהפכת ה-AI",
+    "perspective": "modern",
+    "full_details": "בנובמבר 2022, OpenAI השיקה את ChatGPT, מודל שפה גדול שיצר מהפכה בתחום הבינה המלאכותית והאינטראקציה עם מחשבים. הפיכת הAI הגנרטיבי לנגיש לציבור הרחב פתחה עידן חדש.",
+    "interesting_facts": [
+      "ChatGPT צבר 100 מיליון משתמשים תוך חודשיים, ההתרחבות המהירה ביותר בהיסטוריה של יישומים",
+      "מודלי שפה גדולים מבוססים על ארכיטקטורת Transformer שפותחה ב-2017",
+      "התקדמות הAI הגנרטיבי הובילה לחששות אתיים משמעותיים ולקריאות לרגולציה"
+    ],
+    "related_events": [
+      31,
+      32,
+      33
+    ]
+  }
+]

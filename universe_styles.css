@@ -1,0 +1,512 @@
+/* מאפייני עיצוב לאתר ההיסטוריה של היקום */
+
+/* משתני צבעים */
+:root {
+  --color-cosmic: #2E1F5E;      /* גוון סגול כהה ליקום */
+  --color-solar: #125083;       /* גוון כחול למערכת השמש */
+  --color-biological: #208f6e;  /* גוון ירוק-טורקיז לחיים */
+  --color-human: #a47443;       /* גוון חום לאדם */
+  --color-civilization: #c57c4a; /* גוון כתום לציוויליזציה */
+  --color-modern: #6c4a7c;      /* גוון סגול למודרני */
+
+  --color-text: #2c3e50;        /* צבע טקסט כללי */
+  --color-background: #f9f9f9;  /* צבע רקע כללי */
+  --color-card: #ffffff;        /* צבע כרטיסיות */
+  --color-highlight: #e74c3c;   /* צבע הדגשה */
+  --color-header: #1e3c72;      /* צבע כותרת */
+}
+
+/* אנימציות */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* עיצוב כללי */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rubik', 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  direction: rtl;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--color-header);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--color-highlight);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* עיצוב כותרת */
+.header {
+  background: linear-gradient(120deg, var(--color-cosmic), var(--color-solar));
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.header h1 {
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.header p {
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* אנימציה בכותרת */
+.cosmic-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* מיכל ראשי */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* מבנה תוכן */
+.content-section {
+  margin: 3rem 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* עיצוב ציר זמן */
+.timeline {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-cosmic), var(--color-modern));
+  transform: translateX(50%);
+}
+
+.timeline-era {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timeline-era-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.era-title {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* צבעים לפי עידן */
+.era-cosmic .era-title {
+  background-color: var(--color-cosmic);
+}
+
+.era-solar .era-title {
+  background-color: var(--color-solar);
+}
+
+.era-biological .era-title {
+  background-color: var(--color-biological);
+}
+
+.era-human .era-title {
+  background-color: var(--color-human);
+}
+
+.era-civilization .era-title {
+  background-color: var(--color-civilization);
+}
+
+.era-modern .era-title {
+  background-color: var(--color-modern);
+}
+
+/* כרטיסי אירועים */
+.timeline-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.event-card {
+  background-color: var(--color-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.event-header {
+  padding: 1.2rem;
+  color: white;
+  position: relative;
+}
+
+.event-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.8rem;
+}
+
+.event-time {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.event-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-body {
+  padding: 1.5rem;
+}
+
+.event-description {
+  margin-bottom: 1rem;
+}
+
+.event-facts {
+  margin-top: 1rem;
+}
+
+.event-fact {
+  background-color: rgba(0,0,0,0.05);
+  padding: 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* צבעים לפי קטגוריה */
+.category-יקום .event-header {
+  background-color: var(--color-cosmic);
+}
+
+.category-מערכת-השמש .event-header {
+  background-color: var(--color-solar);
+}
+
+.category-חיים .event-header {
+  background-color: var(--color-biological);
+}
+
+.category-אדם .event-header {
+  background-color: var(--color-human);
+}
+
+.category-ציוויליזציה .event-header {
+  background-color: var(--color-civilization);
+}
+
+.category-מדע .event-header,
+.category-טכנולוגיה .event-header,
+.category-היסטוריה .event-header,
+.category-רפואה .event-header,
+.category-חלל .event-header {
+  background-color: var(--color-modern);
+}
+
+/* אינטראקטיביות */
+.perspective-controls {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.perspective-button {
+  padding: 0.8rem 1.5rem;
+  margin: 0 0.5rem 1rem 0.5rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #eee;
+  color: var(--color-text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.perspective-button:hover {
+  background-color: #ddd;
+}
+
+.perspective-button.active {
+  background-color: var(--color-highlight);
+  color: white;
+}
+
+/* מודל פרטים */
+.event-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.event-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+
+.event-modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-section {
+  margin-bottom: 2rem;
+}
+
+.modal-section-title {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+/* כפתור דו-לשוני */
+.language-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: white;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.language-toggle:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* אנימציות אלמנטים */
+.animated-element {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* כלי למידה אינטראקטיביים */
+.interactive-tools {
+  margin: 4rem 0;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.tool-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.tool-icon {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, var(--color-cosmic), var(--color-solar));
+  color: white;
+  font-size: 3rem;
+}
+
+.tool-content {
+  padding: 1.5rem;
+}
+
+.tool-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* כפתור המשחק */
+.play-button {
+  display: inline-block;
+  background-color: var(--color-highlight);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.play-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* התאמה למכשירים ניידים */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+
+  .timeline::before {
+    right: 30px;
+    transform: none;
+  }
+
+  .timeline-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perspective-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

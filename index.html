@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>היסטוריה של היקום - מסע מהמפץ הגדול ועד היום</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- כותרת עליונה עם אנימציית חלקיקים -->
+    <header class="hero">
+        <div class="particle-container" id="particleCanvas"></div>
+        <div class="hero-content">
+            <h1>מסע בזמן: מהמפץ הגדול ועד מהפכת הבינה המלאכותית</h1>
+            <p>גלה את הסיפור המרתק של היקום - מרגע היווצרותו ועד ימינו</p>
+            <button class="btn btn--primary" id="exploreBtn">התחל לחקור</button>
+        </div>
+    </header>
+
+    <!-- פקדי סינון ופרספקטיבה -->
+    <section class="controls-section">
+        <div class="container">
+            <div class="filter-controls flex">
+                <div class="perspective-controls">
+                    <h3>פרספקטיבות זמן:</h3>
+                    <div class="button-group">
+                        <button class="btn btn--secondary perspective-btn active" data-perspective="cosmic">קוסמית</button>
+                        <button class="btn btn--secondary perspective-btn" data-perspective="geological">גיאולוגית</button>
+                        <button class="btn btn--secondary perspective-btn" data-perspective="human">אנושית</button>
+                        <button class="btn btn--secondary perspective-btn" data-perspective="modern">מודרנית</button>
+                    </div>
+                </div>
+                <div class="category-filter">
+                    <h3>סינון לפי קטגוריה:</h3>
+                    <div class="button-group">
+                        <button class="btn btn--secondary category-btn active" data-category="all">הכל</button>
+                        <button class="btn btn--secondary category-btn" data-category="universe">יקום וחלל</button>
+                        <button class="btn btn--secondary category-btn" data-category="earth">כדור הארץ</button>
+                        <button class="btn btn--secondary category-btn" data-category="life">חיים</button>
+                        <button class="btn btn--secondary category-btn" data-category="human">אנושות</button>
+                        <button class="btn btn--secondary category-btn" data-category="tech">טכנולוגיה ומדע</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ציר זמן אינטראקטיבי -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <h2>ציר זמן היסטורי</h2>
+            <div class="timeline-container">
+                <div class="timeline-navigation">
+                    <button class="zoom-btn" id="zoomIn">+</button>
+                    <button class="zoom-btn" id="zoomOut">-</button>
+                    <button class="zoom-btn" id="resetZoom">איפוס</button>
+                </div>
+                <div class="timeline-visualization" id="timelineVisualization">
+                    <div class="timeline-axis" id="timelineAxis"></div>
+                    <div class="timeline-events" id="timelineEvents"></div>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart-wrapper">
+                    <h3>ציר זמן מורחב של היקום</h3>
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1750552341/pplx_code_interpreter/a2dcaa49_x835qg.jpg" 
+                         alt="ציר זמן אינטראקטיבי של היסטוריה של היקום" 
+                         class="chart-image">
+                </div>
+                <div class="chart-wrapper">
+                    <h3>התפלגות אירועים לפי קטגוריה</h3>
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1750552439/pplx_code_interpreter/69db9d6a_jcls8d.jpg" 
+                         alt="התפלגות אירועים לפי קטגוריות בהיסטוריה של היקום" 
+                         class="chart-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- תקופות וכרטיסיות אירועים -->
+    <section class="eras-section" id="eras">
+        <div class="container">
+            <h2>תקופות בהיסטוריה של היקום</h2>
+            
+            <div class="era-container" id="era-cosmic">
+                <h3 class="era-title">היקום והיווצרות כדור הארץ</h3>
+                <div class="era-cards" id="cosmic-cards"></div>
+            </div>
+            
+            <div class="era-container" id="era-life">
+                <h3 class="era-title">התפתחות החיים על פני כדור הארץ</h3>
+                <div class="era-cards" id="life-cards"></div>
+            </div>
+            
+            <div class="era-container" id="era-human">
+                <h3 class="era-title">התפתחות האדם</h3>
+                <div class="era-cards" id="human-cards"></div>
+            </div>
+            
+            <div class="era-container" id="era-civilization">
+                <h3 class="era-title">הציוויליזציה האנושית והמהפכות הגדולות</h3>
+                <div class="era-cards" id="civilization-cards"></div>
+            </div>
+            
+            <div class="era-container" id="era-modern">
+                <h3 class="era-title">העידן המודרני ומהפכת המידע</h3>
+                <div class="era-cards" id="modern-cards"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- חלק כלי למידה -->
+    <section class="learning-tools-section" id="tools">
+        <div class="container">
+            <h2>כלי למידה</h2>
+            
+            <div class="learning-tool quiz">
+                <h3>חידון היסטורי</h3>
+                <p>בחן את הידע שלך בהיסטוריה של היקום</p>
+                <div class="quiz-container" id="quizContainer">
+                    <div class="quiz-question" id="quizQuestion">
+                        <h4>שאלה: <span id="questionText"></span></h4>
+                        <div class="answers" id="answerOptions"></div>
+                        <button class="btn btn--primary" id="checkAnswer" disabled>בדוק תשובה</button>
+                        <button class="btn btn--secondary" id="nextQuestion" disabled>שאלה הבאה</button>
+                        <div class="quiz-feedback" id="quizFeedback"></div>
+                    </div>
+                    
+                    <div class="quiz-start" id="quizStart">
+                        <button class="btn btn--primary" id="startQuiz">התחל חידון</button>
+                    </div>
+                    
+                    <div class="quiz-results" id="quizResults">
+                        <h4>ציון סופי: <span id="finalScore"></span></h4>
+                        <button class="btn btn--primary" id="restartQuiz">נסה שוב</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="learning-tool perspective">
+                <h3>פרספקטיבות של זמן</h3>
+                <p>גלה כיצד פרקי זמן שונים משתלבים באותו רצף</p>
+                <div class="perspective-tool" id="perspectiveTool">
+                    <div class="perspective-slider-container">
+                        <label for="perspective-slider">טווח זמן:</label>
+                        <input type="range" id="perspective-slider" min="1" max="4" value="1" class="perspective-slider">
+                        <div class="slider-labels">
+                            <span>מיליארדי שנים</span>
+                            <span>מיליוני שנים</span>
+                            <span>אלפי שנים</span>
+                            <span>מאות שנים</span>
+                        </div>
+                    </div>
+                    <div class="perspective-view" id="perspectiveView"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- מודל לכרטיס אירוע -->
+    <div class="event-modal" id="eventModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <div class="modal-info">
+                <div class="modal-info-item">
+                    <strong>תאריך:</strong>
+                    <span id="modalDate"></span>
+                </div>
+                <div class="modal-info-item">
+                    <strong>קטגוריה:</strong>
+                    <span id="modalCategory"></span>
+                </div>
+            </div>
+            <div class="modal-description">
+                <p id="modalDescription"></p>
+            </div>
+            <div class="modal-facts">
+                <h4>עובדות מעניינות:</h4>
+                <ul id="modalFacts"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- מידע על האתר -->
+    <footer>
+        <div class="container">
+            <h2>על אודות האתר</h2>
+            <p>אתר זה נוצר כדי לספק חוויית למידה אינטראקטיבית על היסטוריה של היקום, מהמפץ הגדול ועד למהפכת הבינה המלאכותית. האתר משלב ויזואליזציות, אנימציות וכלים אינטראקטיביים כדי להמחיש את הקנה מידה העצום של ההיסטוריה האוניברסלית.</p>
+            <p>&copy; 2025 היסטוריה של היקום</p>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
