@@ -571,56 +571,56 @@ function initializeTimeline() {
 function renderTimeline() {
     const container = document.getElementById('timelineEvents');
     const axisContainer = document.getElementById('timelineAxis');
-    if (!container) return;
-    
+    if (!container || !axisContainer) return;
+
     container.innerHTML = '';
-    if (axisContainer) axisContainer.innerHTML = '';
-    
+    axisContainer.innerHTML = '';
+
     let filteredData = getFilteredData();
-    
+
     if (filteredData.length === 0) {
         container.innerHTML = '<div class="no-events">אין אירועים להצגה</div>';
         return;
     }
-    
+
     // חישוב טווח זמנים
     const minYears = Math.min(...filteredData.map(d => d.yearsAgo));
     const maxYears = Math.max(...filteredData.map(d => d.yearsAgo));
-    
+
     // הוספת תוויות זמן לציר
     addTimeLabels(axisContainer, minYears, maxYears);
-    
+
     // יצירת נקודות על ציר הזמן
     filteredData.forEach((event, index) => {
         const eventElement = document.createElement('div');
         eventElement.className = `timeline-event category-${event.category}`;
-        
+
         const position = calculateTimelinePosition(event.yearsAgo, minYears, maxYears);
-        
+
         eventElement.style.left = position + '%';
         eventElement.style.top = (20 + (index % 4) * 80) + 'px';
-        
+
         // יצירת הנקודה
         const dot = document.createElement('div');
         dot.className = 'event-dot';
         eventElement.appendChild(dot);
-        
+
         // תווית עם כותרת ותאריך
         const label = document.createElement('div');
         label.className = 'event-label';
-        
+
         const title = document.createElement('div');
         title.className = 'event-title';
         title.textContent = event.title;
-        
+
         const date = document.createElement('div');
         date.className = 'event-date';
         date.textContent = event.date;
-        
+
         label.appendChild(title);
         label.appendChild(date);
         eventElement.appendChild(label);
-        
+
         // הוספת tooltip
         const tooltip = document.createElement('div');
         tooltip.className = 'event-tooltip';
@@ -630,23 +630,23 @@ function renderTimeline() {
             ${event.description.substring(0, 100)}...
         `;
         eventElement.appendChild(tooltip);
-        
+
         // אירועי עכבר
         eventElement.addEventListener('mouseenter', () => {
             tooltip.style.opacity = '1';
             tooltip.style.visibility = 'visible';
         });
-        
+
         eventElement.addEventListener('mouseleave', () => {
             tooltip.style.opacity = '0';
             tooltip.style.visibility = 'hidden';
         });
-        
+
         // אירוע קליק
         eventElement.addEventListener('click', () => {
             showEventModal(event);
         });
-        
+
         container.appendChild(eventElement);
     });
 }
